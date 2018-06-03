@@ -87,14 +87,20 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Name</th>
+        <th>Dish</th>
         <th>Cuisine</th>
         <th>Actions</th>
+
       </tr>
 
       <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.name %></td>
+        <td>
+          <a href = "/dishes/<%=dish.id%>" >
+          <%= dish.name %>
+          </a>
+        </td>
+
         <td>
           <% if dish.cuisine.present? %>
             <a href="/cuisines/<%= dish.cuisine.id %>">

@@ -36,8 +36,8 @@
         <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @bookmark.venue_id), :class => "form-control") %>
       </div>
 
-      
-      
+      <!-- Hidden input for user name -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
       <!-- Label and input for notes -->
       <div class="form-group">

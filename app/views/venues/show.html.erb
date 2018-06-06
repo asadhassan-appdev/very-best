@@ -25,7 +25,7 @@
           
           <% @venue.bookmarks.each do |bookmark| %>
         <li class="list-group-item">
-          <a href="/venues/<%= @venue.id %>">
+          <a href="/bookmarks/<%= bookmark.id %>">
             <%= bookmark.dish.name %>
           </a>
           
@@ -59,7 +59,7 @@
   <form action="/create_bookmark" class="form-inline float left" method="post">
     <input name="authenticity_token" type="hidden" value="L7ZaToXIrQm5hzPYBC5cR9GnFc2KhIDrUWw5ScLO8V7XBkG652FgXtXigVs78D40cYNc3ZXLEBiqLWydDqI0ZQ==">
                 <input type="hidden" name="user_id" value="<%= current_user.id %>">
-                <input type="hidden" name="venue_id" value="<%= @bookmark.venue_id %>">
+                <input type="hidden" name="venue_id" value="<%= @venue.id %>">
                 <input type="hidden" name="dish_id" value="<%= @bookmark.dish_id %>">
                 <input type="hidden" name="notes_id" value="<%= @bookmark.notes %>">
                 
